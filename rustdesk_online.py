@@ -31,14 +31,3 @@ def build_rustdesk_payload(source_id: str, target_id: str) -> bytes:
         bytes([0x12, len(target_id_bytes)]) + target_id_bytes
     )
 
-if __name__ == "__main__":
-    source_id = "123456789" #Mockup source ID
-    target_id = "987654321" #Target ID
-    server_ip = "1.1.1.1" #your rustdesk server
-    online = check_rustdesk_online(source_id, target_id, server_ip)
-    if online is True:
-        print("Target is ONLINE")
-    elif online is False:
-        print("Target is OFFLINE")
-    else:
-        print("Unknown state")
